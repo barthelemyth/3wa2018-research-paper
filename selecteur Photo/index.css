@@ -1,0 +1,19 @@
+.photo1 >li{
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.photo2 >li{
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.cadre{
+	border:10px solid green;
+}
+
+.grey{
+	border:10px solid grey;
+}

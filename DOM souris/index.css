@@ -1,0 +1,17 @@
+.rectangle{
+	background-color:royalblue;
+	height:300px;
+	width:400px; 
+}
+
+.hidden{
+	display:none;
+}
+
+.survole{
+	background-color: red;
+}
+
+.couleur{
+	background-color: green;
+}
