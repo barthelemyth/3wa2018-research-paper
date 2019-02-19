@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<section class="post">
+    <h3><?= htmlspecialchars($Detail['Title']) ?></h3>
+    <article><?= nl2br(htmlspecialchars($Detail['Contents'])) ?></article>
+    <small>
+        Rédigé par <?= htmlspecialchars($Detail['First_Name']) ?> <?= htmlspecialchars($Detail['Last_Name']) ?>
+        le <?= htmlspecialchars($Detail['Creation_Date']) ?>
+    </small>
+</section>
+
+<hr>
+
+
+
+<?php foreach($Comment as $Comments): ?>
+<p><?= $Comments['Pseudo'] ?></p>
+<p><?= $Comments['Contents'] ?></p>
+<?php endforeach ?>
+<hr>
+
+
+
+<?php if (array_key_exists('firstName', $_SESSION) == true ): ?>
+<form method="Post" action="show_red.php?id=<?=$_GET['id']?>">
+<div>
+<label>Pseudo</label>
+<input type="text" name="Pseudo" >
+</div>
+<div>
+<label>Commentaire</label>
+<input type="text" name="Commentaire" >
+</div>
+<button type="submit">Enregistrer</button>
+</form>
+	
+</body>
+</html>
+
+<?php endif ?>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div>
+	<p><?= $customer['contactFirstName']?> <?= $customer['contactLastName']?></p>
+	<p><?= $customer['addressLine1']?> <?= $customer['city']?></p>
+</div>
+<h1> <a href="index.php">retour à l'accueil</h1></a>
+	<table>
+<tr>
+	<th>produit</th>
+	<th>prix</th>
+	<th>quantité</th>
+	<th>prix total</th>	
+</tr>
+<tr>
+<?php foreach($detail as $details): ?>
+<td><?=$details['productName']?></td>
+<td><?=$details['quantityOrdered']?></td>
+<td><?=$details['buyPrice']?></td>
+<td><?=$details['total']?></td>	
+</tr>
+<?php endforeach ?>
+<tr>
+<td></td>
+<td></td>
+<td>Montant Total</td>
+<td><?=$detail2[0]['totalge']?></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>TVA</td>
+<td><?=$detail2[0]['totalge']*0.2?></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>TTC</td>
+<td><?=$detail2[0]['totalge']*1.2?></td>
+</tr>
+</table>
+</body>
+</html> 

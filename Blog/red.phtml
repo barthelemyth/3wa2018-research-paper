@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form  action="red.php" method="post">
+<div class="container">
+<label> Article</label>
+<fieldset>
+<main>
+<div>
+<label>Titre</label>
+<input type="text" name="titre" display='block' class="block">
+</div>
+<div>
+<label>Article</label>
+<input type="text" name="Article" class="block" id='com'>
+</div>
+
+
+
+
+<label> Categorie</label>
+<select name="category">
+<?php foreach($Category as $Categories): ?>
+<option name="category" value="<?= $Categories['Id']  ?>"><?= $Categories['Name']  ?></option>
+<?php endforeach ?>
+</select>
+
+
+<label> Auteur</label>
+<select name="author">
+<?php foreach($Authors as $Author): ?>
+<option  value="<?= $Author['Id']  ?>"><?= $Author['Last_Name'].' '.$Author['First_Name']  ?></option>
+<?php endforeach ?>
+</select>
+
+
+
+<button type="submit">Enregistrer</button>
+</main>
+</fieldset>
+
+
+</form>
+
+	
+</body>
+</html>
+
+

@@ -1,0 +1,86 @@
+
+
+ 
+
+    <main>
+        <!-- Affichage du template lié à la vue -->
+        <h2><i class="fa fa-shopping-cart"></i> Passer une commande</h2>
+
+<form data-order-step="run" id="order-form" class="generic-form hidden" style="display: block;">
+
+    <!-- Champ caché stockant le prix de vente du produit alimentaire sélectionné -->
+    <input type="hidden" name="salePrice" value="3">
+
+    <aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <em class="total-error-count">1</em> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+    <fieldset>
+        <legend>Ajouter un article</legend>
+        <ul>
+            <li>
+                <label for="meal">Nom :</label>
+                <select id="meal" name="meal">
+                                        <?php foreach($Meals as $Meal):?>
+                                            <option id=""value="<?=$Meal['Id']?>"><?=$Meal['Name']?></option>
+                                         
+                                        <?php endforeach?>
+                                    </select>
+                <article id="meal-details" class="meal-details no-left-label">
+                    <img src="" alt="Photo du produit">
+                    <h2></h2>
+                    <p></p>
+                    <span>Prix : <strong></strong> €</span>
+                </article>
+            </li>
+            <li>
+                <label for="quantity">Quantité :</label>
+                <input id="quantity" class="quantity" type="text" maxlength="2" name="quantity" data-name="Quantité" data-type="positive-integer" data-required="">
+            </li>
+            <li>
+                <button id='button1' class="button button-primary no-left-label" type="submit">Ajouter</button>
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Récapitulatif de la commande</legend>
+        <section id="order-summary"><table class="generic-table">
+            <tbody>
+            <tr>
+                <td class="basket-empty">Votre panier est vide pour le moment !</td>
+            </tr>
+        </tbody>
+    </table></section>
+    </fieldset>
+</form>
+
+<ul class="link-list">
+    <li>
+        <a href="/Restaurant (corrigé)/index.php/order/payment?id=32"></a><button class="button button-primary">Valider la commande</button>
+        <a class="button button-cancel small" href="/Restaurant (corrigé)/index.php">Annuler</a>
+    </li>
+</ul>
+
+
+<!-- Classes de gestion du formulaire de commande -->
+<!-- Ce code JavaScript n'est chargé QUE depuis l'URL /order/payment/success -->
+<script src="/Restaurant (corrigé)/application/www/js/classes/BasketSession.class.js"></script>
+<script src="/Restaurant (corrigé)/application/www/js/classes/OrderForm.class.js"></script>    </main>
+
+    <!-- Pied de page commun -->
+    <footer>
+        <ul class="link-list">
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/visa.png" alt="Visa"></li>
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/mastercard.png" alt="MasterCard"></li>
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/paypal.png" alt="PayPal"></li>
+        </ul>
+        <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par les élèves de la 3W Academy</small>
+    </footer>
+
+    <!-- Code principal JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/Ajax.js"></script>
+    <script src="<?= $wwwUrl ?>/js/BasketSession.class.js"></script>
+<script src="<?= $wwwUrl ?>/js/OrderForm.class.js"></script>
+

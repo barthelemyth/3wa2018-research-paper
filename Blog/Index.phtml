@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+
+<?php foreach($Article as $Articles): ?>
+<a href="show_red.php?id=<?= $Articles['Id'] ?>"> <p><?= $Articles['Title'] ?></p></a>
+<?php if (array_key_exists( 'firstName', $_SESSION )):?> <?php if ($_SESSION['role'] == 'admin') { ?> <a href="delete.php?id=<?= $Articles['Id'] ?>">Delete</a> <?php } ?> <?php endif ?>
+<p><?= $Articles['Contents'] ?></p>
+<p> Redigé par : <?= $Articles['Last_Name'] ?> </p>
+<?php endforeach ?>
+
+
+<h1> bienvenue sur notre Site</h1>
+<p> Creez vous compte en cliquant sur le lien prededent</p>
+<a href="register.php"><h1> s'enrengistrer </h1></a>
+
+
+
+
+
+	
+</body>
+</html>
+
+

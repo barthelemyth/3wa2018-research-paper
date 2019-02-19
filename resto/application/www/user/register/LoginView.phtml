@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <!-- Interface utilisateur -->
+    <nav class="user-interface">
+        <ul class="link-list">
+                            <li>
+                    <a class="button button-primary" href="<?= $requestUrl ?>/user/register">Créer un compte</a>
+                </li>
+                <li class="layout-right">
+                    <a class="button button-primary" href="<?= $requestUrl ?>/user/login">Connexion</a>
+                </li>
+                    </ul>
+    </nav>
+
+    <main>
+        <!-- Affichage du template lié à la vue -->
+        <h2><i class="fa fa-lock"></i> Se connecter avec un compte utilisateur</h2>
+
+<form class="generic-form" action="<?= $requestUrl ?>" method="POST">
+
+    <aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <em class="total-error-count">1</em> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+    <fieldset>
+        <legend>Informations d'authentification</legend>
+        <ul>
+            <li>
+                <label for="email">E-mail :</label>
+                <input id="email" type="text" name="email" data-required="" data-name="E-mail" value="">
+            </li>
+            <li>
+                <label for="password">Mot de passe :</label>
+                <input id="password" type="password" name="password" data-required="" data-name="Mot de passe">
+            </li>
+        </ul>
+    </fieldset>
+
+    <ul>
+        <li>
+            <input class="button button-primary" type="submit" value="Connexion">
+            <a class="button button-cancel small" href="<?= $requestUrl?>">Annuler</a>
+        </li>
+    </ul>
+</form>    </main>
+
+    <!-- Pied de page commun -->
+    <footer>
+        <ul class="link-list">
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/visa.png" alt="Visa"></li>
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/mastercard.png" alt="MasterCard"></li>
+            <li><img src="/Restaurant (corrigé)/application/www/images/payment/paypal.png" alt="PayPal"></li>
+        </ul>
+        <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par les élèves de la 3W Academy</small>
+    </footer>
+
+    <!-- Code principal JavaScript de l'application -->
+    <!-- <script src="/Restaurant (corrigé)/application/www/js/main.js"></script> -->
+</html>

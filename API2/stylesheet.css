@@ -1,0 +1,30 @@
+
+
+#resume{
+font-weight: normal;
+width:65%;
+color:black;
+padding-left: 150px;
+}
+
+#image{
+
+}
+
+main{
+background-color: grey;
+display:flex;
+width:80%;
+margin-right: auto;
+margin-left:auto;
+
+}
+
+h1{
+	text-align: center;
+
+}
+
+img{
+	width:200%
+}

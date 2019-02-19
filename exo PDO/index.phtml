@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div>
+<table>
+<tr>
+	<th>Commande</th>
+	<th>date de commande</th>
+	<th>date de livraison</th>
+	<th>statut</th>	
+</tr>
+<?php foreach($orders as $order): ?>
+	<tr>
+		<td><a href="index2.php?orderNumber=<?= $order['orderNumber'] ?>"><?= $order['orderNumber'] ?></a></td>
+		<td><?= $order['orderDate']  ?></td>
+		<td><?= $order['requiredDate']  ?></td>
+		<td><?= $order['status']  ?></td>
+		 
+	</tr>
+<?php endforeach ?>
+</table>
+	</div>
+</body>
+</html>
+
